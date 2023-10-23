@@ -1,6 +1,6 @@
-## Simplified app from last week!
 library(shiny)
 library(ggplot2)
+library(bslib)
 
 ## base R!s
 d <- mtcars
@@ -10,11 +10,15 @@ d$cyl <- as.factor(d$cyl)
 d$am <- as.factor(d$am)
 
 ### UI
-ui <- fluidPage(
+ui <- page_sidebar(
+  theme = bs_theme(version = 5,
+                   bootswatch = "cyborg"),
   
   title = "Cars!",
   
-  sidebarPanel(
+  sidebar = sidebar(
+    
+    title = "Filter controls",
     
     selectInput(inputId = "cyl",
                 label = "Cylinders",
@@ -28,15 +32,29 @@ ui <- fluidPage(
                 selected = NULL,
                 multiple = FALSE)
     
-    
   ),
   
-  mainPanel(
-    plotOutput(outputId = 'xy_plt'),
-    plotOutput(outputId = "hist_plt"),
-    tableOutput(outputId = "tbl")
-  )
+  mainPanel(tabsetPanel(
+    type = "tabs",
+    
+    tabPanel("XY Plot", card(
+      card_header("XY Plot"),
+      plotOutput(outputId = "xy_plt"),
+      full_screen = TRUE
+    )),
+    tabPanel("Histogram", card(
+      card_header("Histogram"),
+      plotOutput(outputId = "hist_plt"),
+      full_screen = TRUE
+    )),
+    tabPanel("Table of Car Types", card(
+      card_header("Table of Car Types"), 
+      tableOutput(outputId = "tbl"),
+      full_screen = TRUE
+    ))
+  ))
 )
+
 
 
 ### Server
@@ -44,13 +62,13 @@ server <- function(input, output, session){
   
   ## update based on URL parameters
   observe({
-
+    
     query <- parseQueryString(session$clientData$url_search)
-
+    
     if(!is.null(query[['cyl']])){
       updateSelectInput(session, "cyl", selected = query[['cyl']])
     }
-
+    
     if(!is.null(query[['am']])){
       updateSelectInput(session, "am", selected = query[["am"]])
     }
@@ -95,4 +113,4 @@ server <- function(input, output, session){
 
 
 ## Shiny app must return a shinyapp
-shiny::shinyApp(ui = ui, server = server)
+shinyApp(ui = ui, server = server)
