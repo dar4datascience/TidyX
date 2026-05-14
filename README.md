@@ -918,6 +918,151 @@ We show the tools available to create your basic R package by using the usethis 
   - Deploying shiny apps can be a pain, you need a server always running, the correct version of R, and making sure folks have access to it. Or you ask your users to download R and shiny locally, which we all know how that goes. Well, as of Posit::conf 2023, it was announced that shinylive is officially available for R! Hosting a shiny app directly from the browser! We take the opportunity to learn how to make a shinylive app, and take you through the steps of hosting it from github pages! Many thanks to Rami Krispin for his tutorial. 
   - [Source Code](https://github.com/thebioengineer/TidyX/tree/master/TidyTuesday_Explained/161-shiny_live)
 
+- [TidyX Episode 162 | Advanced Shiny - Web Scraping and Dynamic Linking](https://bit.ly/TidyX_Ep162)
+
+  - Sometimes you need to dynamically pull content for your shiny app, since you don't have it all locally. This could be a database, internal API, and in our case, an external website. Using Hockey-Reference.com, we create a simple shiny application to allow us to get the list of games from a season and then pull game-level information such as scoring and penalites. Of course we want to give credit and allow our user to see more information, so we create a nice link back to hockey-reference.com that allows the user to go directly to the game page.
+  - [Source Code](https://github.com/thebioengineer/TidyX/tree/master/TidyTuesday_Explained/162-Connected_Shiny_Apps_Part1)
+
+- [TidyX Episode 163 | Advanced Shiny - Player links in DataTable](https://bit.ly/TidyX_Ep163)
+
+  - Going to player-level data after last weeks game level, we pull all the players for the 2024 Hockey Season, and generate a simple shiny app letting you filter down to keep just a few players to inspect. However, again the shiny app is only showing a small amount of information and we want to allow the user to see more information, so we provide a nice link in our datatable to link back to the player page on Hockey Reference to learn more about that particular player. 
+  - [Source Code](https://github.com/thebioengineer/TidyX/tree/master/TidyTuesday_Explained/163-Connected_Shiny_Apps_Part2)
+
+- [TidyX Episode 164 | Advanced Shiny - Running Multiple Linked Shiny Apps](https://bit.ly/TidyX_Ep164)
+
+  - Running multiple shiny apps, and setting them up to link back to one another may sound like a tall task. BUT, it may be more approachable and powerful than you think. Building on the last few episodes, and sprinkling in some magic from episode 160, we updated our shiny apps from episode 162 and 163 to actually link together, adding a player roster in the Games Shiny app to link into the Player Shiny app. We also show how to run multiple apps using the {callr} R package!
+  - [Source Code](https://github.com/thebioengineer/TidyX/tree/master/TidyTuesday_Explained/164-Connected_Shiny_Apps_Part3)
+
+- [TidyX Episode 165 | The Power of Plotting Compels You](https://bit.ly/TidyX_Ep165)
+
+  - Sometimes you just want to make a simple, easy plot without having to load all those libraries. Other times you don't have access to all those libraries and you STILL need to make those nice plots. This week we talk a bit about Base R scatter plot building capabilities. We cover the basics of getting started, some tips and tricks, how to add a legend, and finally setting those nice labels, only using base R graphic tools.
+  - [Source Code](https://github.com/thebioengineer/TidyX/tree/master/TidyTuesday_Explained/165-Plotting_1)
+
+- [TidyX Episode 166 | The Line Plot Saga](https://bit.ly/TidyX_Ep166)
+
+  - Working off of last weeks base R scatter plots, we look into how one might generate a line plot! Often for some process or time series, we take the Lahman batting datasets and generate trend data for hits from the year 2000 to 2020. We lean into our Base R use and show some fun ways to group and summarize data using the aggregate function. We make line plots of hits, show how to add confidence and prediction intervals, and finally how to save your hard work!
+  - [Source Code](https://github.com/thebioengineer/TidyX/tree/master/TidyTuesday_Explained/166_Plotting_2)
+
+- [TidyX Episode 167 | Grand Slam - Knocking it Out of the Park with Base R Density Plots](https://bit.ly/TidyX_Ep167)
+
+  - In this thrilling R episode, we step up to the plate and hit a grand slam with base R's powerful capabilities for crafting stunning density and distribution plots. Using Lahman database baseball batting stats from 2010-2019, we dive into the world of data visualization, showcasing techniques like box plots, bar plots, and histograms. Special attention is given to the grandeur of density plots, all presented with the flair of RStats mastery. Join us on this home run journey into the art of visualizing data distributions with base R!
+  - [Source Code](https://github.com/thebioengineer/TidyX/tree/master/TidyTuesday_Explained/167_Plotting_3)
+
+- [TidyX Episode 168 | Hall of Fame Showdown - Base R Plot Edition](https://bit.ly/TidyX_Ep168)
+
+  - We dive deep into the world of baseball statistics using Lahman database batting data from 1980 to 2004. This episode focuses on comparing players who made it to the Hall of Fame with those who didn't, bringing you insightful visuals using base R plots. Explore the percentage of player inductions, analyze the distribution of Hall of Fame votes, and uncover the nuances of batting averages in this exciting exploration. The episode also features engaging strip charts, informative text plots, and an interactive experience, providing a zesty and insightful journey into the realm of baseball analytics
+  - [Source Code](https://github.com/thebioengineer/TidyX/tree/master/TidyTuesday_Explained/168_Plotting_4)
+
+- [TidyX Episode 169 | Predicting Hall Of Famers in 20 Minutes](https://bit.ly/TidyX_Ep169)
+
+  - We undertake a predictive analysis focused on forecasting potential inductees for the Baseball Hall of Fame Class of 2024 and explain it in only 20-minutes! Using tidyverse for data processing, and base R for model fitting, and prediction, we generate predictions for newly eligible players as well as players we are still waiting to be inducted. The exploration centers on significant player statistics, offering insights into the determinants of Hall of Fame selections. Join us for a fast paced look at baseball analytics and predictive modeling. 
+  - [Source Code](https://github.com/thebioengineer/TidyX/tree/master/TidyTuesday_Explained/169-HOF_in_20)
+
+- [TidyX Episode 170 | Beyond Basic For loops - Tidy Expressions](https://bit.ly/TidyX_Ep170)
+
+  - We jump into the intricacies of for loops, pushing beyond the basics into the realm of Tidy Expressions, using the power of efficient coding using tidyverse functions, double curly embraces, and str2lang. By doing this, we can leverage tidyverse functions for efficient coding in custom functions and maintain the non standard evaluation tricks used by tidyverse!
+  - [Source Code](https://github.com/thebioengineer/TidyX/tree/master/TidyTuesday_Explained/170-Tidy_Expressions_and_For_loops)
+
+- [TidyX Episode 171 | Bae in the Fast Lane: Bayesian linear regression in 20-Minutes](https://bit.ly/TidyX_Ep171)
+
+  - Learn Bayes Regression in just 20 minutes! Leveraging the power of R and key libraries like tidyverse, rstanarm, tidybayes, and bayesplot, we guide you through fitting a Bayesian model for predicting car mileage based on weight on the mtcars dataset. Uncover insights as we interpret credible intervals, explore the posterior distribution, and make predictions with uncertainty.
+  - [Source Code](https://github.com/thebioengineer/TidyX/tree/master/TidyTuesday_Explained/171-Bayes_linear_regression_in_20)
+
+- [TidyX Episode 172 | 20 minutes to Predict MLB HOF Pitchers - Class of 2024](https://bit.ly/TidyX_Ep172)
+
+  - Join us as we look into the numbers behind predicting MLB Hall of Fame pitchers! This episode includes crafting a dataset from the {Lahman} package, creating logistic regression models, and finally assessing them via model summary tools and visualizing techniques. Stay tuned for insights and adjustments as we navigate the challenges of forecasting HOF greatness!  
+  - [Source Code](https://github.com/thebioengineer/TidyX/tree/master/TidyTuesday_Explained/172-Pitcher_HOF_in_20)
+
+- [TidyX Episode 173 | Pitch into the Bayes - "20" minute MLB Hall of Fame Pitchers predictions](https://bit.ly/TidyX_Ep173)
+
+  - Step up to the mound in TidyX Episode 173 as we predict MLB Hall of Fame pitchers using the power of Bayesian models! Join us as we switch up our game plan, leaving no curveball unturned with rstanarm. We inspect the models and results with prediction intervals and probabilities, bringing a new dimension to player forecasts! We show how to apply this to new players, from randomly selected to a Seattle Favorite - King Felix. 
+  - [Source Code](https://github.com/thebioengineer/TidyX/tree/master/TidyTuesday_Explained/173-Pitcher_HOF_in_20_with_bayes)
+
+
+- [TidyX Episode 174 | AI Speed Ball: Predicting the 2024 Pitcher HOF Class in 20 Minutes](https://bit.ly/TidyX_Ep174)
+
+  - We're bringing the heat with AI! Join us as we step up to the plate and predict the next MLB Hall of Fame pitchers using the power of TensorFlow and Keras. With a killer convolutional neural network in our arsenal, we're ready to knock it out of the park! We go over normalization techniques, how to set up your model, and use it to predict who should be in and who will be out! Don't miss this action-packed inning! 
+  - [Source Code](https://github.com/thebioengineer/TidyX/tree/master/TidyTuesday_Explained/174-Pitchers_HOF_in_20_with_AI)
+
+- [TidyX Episode 175 | Strike Zone Shenanigans: Tidyverse Takes on Hall of Fame Hurlers](https://bit.ly/TidyX_Ep175)
+
+  - We explored the world of data modeling using Tidyverse and Purrr to predict the next MLB Hall of Fame pitchers. Stay tuned for some fascinating insights into our modeling process! We use the same datasets as we have the last several weeks, and apply logic and code to create, evaluate, and tune our models.
+  - [Source Code](https://github.com/thebioengineer/TidyX/tree/master/TidyTuesday_Explained/175-Pitchers_HOF_in_20_Random_Forest)
+
+- [TidyX Episode 176 | Are you Sure?](https://bit.ly/TidyX_Ep176)
+
+  - In this episode, we're comparing pitchers using the power of Random Forests and bayesian statistics to make comparisons between pitchers likelihood of making it into the Hall of Fame! We show how to make simple simulations of individual player performance and differences, and finally make a function to let you easily compare players.
+  - [Source Code](https://github.com/thebioengineer/TidyX/tree/master/TidyTuesday_Explained/176-Are_you_sure)
+
+- [TidyX Episode 177 | Who's Next? FIBA API Viewer Question](https://bit.ly/TidyX_Ep177)
+
+  - We tackle a real-world challenge brought to us by our viewer, Cohen MacDonald. Coehn found an undocumented API that has a bunch of game data from FIBA and has some great ideas on what to do with it. However, theres one problem: the dataset does not contain which players are on the court at what time, just who subs in or out. With an intriguing problem statement and example code from Cohen in hand, we delve into the intricacies of FIBA basketball game data. See how we harness the power of for loops to iteratively update values, addressing Cohen's query on player substitutions and lineup analysis.  
+  - [Source Code](https://github.com/thebioengineer/TidyX/tree/master/TidyTuesday_Explained/177-Whos_Next_FIBA_API)
+
+- [TidyX Episode 178 | Player Time Chart - FIBA API Part 2](https://bit.ly/TidyX_Ep178)
+
+  - In this follow-up to Episode 177, we dive deeper into the intricacies of FIBA basketball game data. Building upon our previous exploration, we refine our methods to generate insightful player time charts. Join us as we unravel the complexities of lineup analysis and visualize player dynamics over the course of a game. Get ready for another insightful episode of TidyX! 
+  - [Source Code](https://github.com/thebioengineer/TidyX/tree/master/TidyTuesday_Explained/178-Whos_Next_FIBA_API_Plotting)
+
+- [TidyX Episode 179 | How many SpaghettiOs does it take to write LOTR?](https://bit.ly/TidyX_Ep179)
+
+  - We embark on a hilarious journey to answer the age-old question: how many SpaghettiOs would it take to write a whole book?  Inspired by abstract_tyler's instagram reel (https://www.instagram.com/p/C6hUeRVp24H/), the we use the power of R to find out! Prepare for some serious spaghetti-fueled fun as we delve into the world of R for data wrangling.  We'll tackle skills like joining data sets, calculating frequencies, and writing functions to automate the analysis.
+ 
+  - [Source Code](https://github.com/thebioengineer/TidyX/tree/master/TidyTuesday_Explained/179-How_many_spaghettios)
+
+- [TidyX Episode 180 | How much stuff have we sent to Space?](https://bit.ly/TidyX_Ep180)
+
+  - Ever wondered how much stuff has rocketed into space?  This episode we do a 180 and look at how we started TidyX by looking at a TidyTuesday dataset to explore objects launched into space!  We'll learn how to wrangle the data, calculate launch counts by year, and create  visualizations with ggplot2.  Plus, we'll discover a cool trick for faceting plots with independent y-axes, and finally show a fun way to interact with facets using the trelliscopejs package.  Join us for a stellar exploration of space exploration data!
+ 
+  - [Source Code](https://github.com/thebioengineer/TidyX/tree/master/TidyTuesday_Explained/180-Going_to_Space)
+
+- [TidyX Episode 181 | I Likert Coffee](https://bit.ly/TidyX_Ep181)
+
+  - Calling all coffee lovers! ☕️ This episode of TidyX gets to the grounds of coffee expertise with a TidyTuesday survey. We'll brew up some data analysis to see if age affects how people rate their coffee knowledge.  Get ready for Likert scales, wrangling data, and statistical throwdowns to see which age group claims coffee crown!
+ 
+  - [Source Code](https://github.com/thebioengineer/TidyX/tree/master/TidyTuesday_Explained/181-I_Likert_Coffee)
+
+- [TidyX Episode 182 | Turbocharge Your Simulations with Parallel Processing! ⚡️](https://bit.ly/TidyX_Ep182)
+
+  - Ever feel like your simulations take forever to run? This TidyX episode injects a dose of speed with parallel processing using the snowfall package!   We'll revisit nested for loops for simulation, then supercharge them to run across multiple cores. Learn how to run simulations in parallel for faster results using the snowfall package, and combine and analyze simulation outputs for deeper insights.
+ 
+  - [Source Code](https://github.com/thebioengineer/TidyX/tree/master/TidyTuesday_Explained/182-Parallel_Sim)
+
+- [TidyX Episode 183 | Within-group regression using {purrr}](https://bit.ly/TidyX_Ep183)
+
+  - Unleash the power of {purrr} to perform within-group regressions! This episode we'll explore fitting separate linear models for different groups in your data, using the Palmer Penguins dataset as an example. Using map(), we'll quickly build models, extract key statistics, and visualize how groups differ. Join us to start the journey on master this great package and become a {purrr}fect data scientist!
+ 
+  - [Source Code](https://github.com/thebioengineer/TidyX/tree/master/TidyTuesday_Explained/183-Within_group_purrr)
+
+- [TidyX Episode 184 | Hello Kitty: Intro to {purrr}](https://bit.ly/TidyX_Ep184)
+
+  - This intro highlights purrr's core functionalities and different ways to write the functions, from named to anonymous functions, keeping types consistent, or even applying functions to filter and pull out contents from lists. Learn the basics to understand how we can apply these techniques to more complicated structures!
+ 
+  - [Source Code](https://github.com/thebioengineer/TidyX/tree/master/TidyTuesday_Explained/184-Hello_Kitty)
+
+
+- [TidyX Episode 185 | Independence Days with {purrr}](https://bit.ly/TidyX_Ep185)
+
+  - Using Wikipedia's list of independence days, we'll show you have to use some advanced {purrr} to work with the data, construct new functions, and work with extracted data from webpages to transform it into usable formats. We aim to answer the amusing quip that every 4 days a country celebrates its independence from the UK with this dataset!
+ 
+  - [Source Code](https://github.com/thebioengineer/TidyX/tree/master/TidyTuesday_Explained/185-global_independence_days)
+
+
+- [TidyX Episode 186 | Gapminder Camcorder - Be Kind Rewind Code Explanation](https://bit.ly/TidyX_Ep186)
+
+  - In this episode, we start a series explaining the examples Ellis showed from his "Be Kind, Rewind" talk at posit::conf(2024). First up, we jump into creating a captivating animated visualization of the Gapminder dataset using R and the {camcorder} package. We break down the code step-by-step, from setting up the animation recording to customizing the plot aesthetics. Learn how to generate smooth and informative animations that tell a compelling story about global trends in GDP per capita and life expectancy.
+ 
+  - [Source Code](https://github.com/thebioengineer/TidyX/tree/master/TidyTuesday_Explained/186-Gapminder_Camcorder)
+
+
+
+
+
+
+
+
+
+
 
 
 
